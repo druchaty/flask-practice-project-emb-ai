@@ -1,6 +1,12 @@
 let RunSentimentAnalysis = ()=>{
     textToAnalyze = document.getElementById("textToAnalyze").value;
 
+    // Check if textToAnalyze is empty
+    if (!textToAnalyze) {
+        document.getElementById("system_response").innerHTML = "Error: Please enter text for analysis.";
+        return;
+    }
+
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
